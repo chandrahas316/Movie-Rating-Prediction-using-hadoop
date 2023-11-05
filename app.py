@@ -8,7 +8,7 @@ app = Flask(__name__)
 with open('./models/RF_model.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['POST','GET'])
 def predict():
     try:
         data = request.get_json()
